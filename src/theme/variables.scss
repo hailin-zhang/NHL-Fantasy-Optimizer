@@ -1,6 +1,3 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -74,4 +71,103 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Custom Ionic theming **/
+  --ion-background-color: #D3D5D5;
+
+  --ion-color-themeDarkest: #382737;
+  --ion-color-themeDarkest-rgb: 56, 39, 55;
+  --ion-color-themeDarkest-contrast: #000000;
+  --ion-color-themeDarkest-contrast-rgb: 0, 0, 0;
+  --ion-color-themeDarkest-shade: #160f16;
+  --ion-color-themeDarkest-tint: #43354a;
+
+  --ion-color-themeDark: #70597C;
+  --ion-color-themeDark-rgb: 112, 89, 124;
+  --ion-color-themeDark-contrast: #000000;
+  --ion-color-themeDark-contrast-rgb: 0, 0, 0;
+  --ion-color-themeDark-shade: #594763;
+  --ion-color-themeDark-tint: #8c7a96;
+
+  --ion-color-themeMiddle: #A68FCC;
+  --ion-color-themeMiddle-rgb: 166, 143, 204;
+  --ion-color-themeMiddle-contrast: #000000;
+  --ion-color-themeMiddle-contrast-rgb: 0, 0, 0;
+  --ion-color-themeMiddle-shade: #8472a3;
+  --ion-color-themeMiddle-tint: #b7a5d6;
+
+  --ion-color-themeLight: #BFBECC;
+  --ion-color-themeLight-rgb: 191, 190, 204;
+  --ion-color-themeLight-contrast: #000000;
+  --ion-color-themeLight-contrast-rgb: 0, 0, 0;
+  --ion-color-themeLight-shade: #85858e;
+  --ion-color-themeLight-tint: #cbcbd6;
+
+  --ion-color-themeLightest: #D3D5D5;
+  --ion-color-themeLightest-rgb: 211, 213, 213;
+  --ion-color-themeLightest-contrast: #000000;
+  --ion-color-themeLightest-contrast-rgb: 0, 0, 0;
+  --ion-color-themeLightest-shade: #a8aaaa;
+  --ion-color-themeLightest-tint: #dbdddd;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css?family=Roboto');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css?family=Montserrat');
+}
+
+* {
+  font-family: 'Roboto', 'Montserrat', sans-serif !important;
+  --ion-font-family: 'Roboto', 'Montserrat', sans-serif !important;
+}
+
+.ion-color-themeDarkest {
+  --ion-color-base: var(--ion-color-themeDarkest) !important;
+  --ion-color-base-rgb: var(--ion-color-themeDarkest-rgb) !important;
+  --ion-color-base-contrast: var(--ion-color-themeDarkest-contrast) !important;
+  --ion-color-base-contrast-rgb: var(--ion-color-themeDarkest-contrast-rgb) !important;
+  --ion-color-base-shade: var(--ion-color-themeDarkest-shade) !important;
+  --ion-color-base-tint: var(--ion-color-themeDarkest-tint) !important;
+}
+
+.ion-color-themeDark {
+  --ion-color-base: var(--ion-color-themeDark) !important;
+  --ion-color-base-rgb: var(--ion-color-themeDark-rgb) !important;
+  --ion-color-base-contrast: var(--ion-color-themeDark-contrast) !important;
+  --ion-color-base-contrast-rgb: var(--ion-color-themeDark-rgb) !important;
+  --ion-color-base-shade: var(--ion-color-themeDark-shade) !important;
+  --ion-color-base-tint: var(--ion-color-themeDark-tint) !important;
+}
+
+.ion-color-themeMiddle {
+  --ion-color-base: var(--ion-color-themeMiddle) !important;
+  --ion-color-base-rgb: var(--ion-color-themeMiddle-rgb) !important;
+  --ion-color-base-contrast: var(--ion-color-themeMiddle-contrast) !important;
+  --ion-color-base-contrast-rgb: var(--ion-color-themeMiddle-contrast-rgb) !important;
+  --ion-color-base-shade: var(--ion-color-themeMiddle-shade) !important;
+  --ion-color-base-tint: var(--ion-color-themeMiddle-tint) !important;
+}
+
+.ion-color-themeLight {
+  --ion-color-base: var(--ion-color-themeLight) !important;
+  --ion-color-base-rgb: var(--ion-color-themeLight-rgb) !important;
+  --ion-color-base-contrast: var(--ion-color-themeLight-contrast) !important;
+  --ion-color-base-contrast-rgb: var(--ion-color-themeLight-contrast-rgb) !important;
+  --ion-color-base-shade: var(--ion-color-themeLight-shade) !important;
+  --ion-color-base-tint: var(--ion-color-themeLight-tint) !important;
+}
+
+.ion-color-themeLightest {
+  --ion-color-base: var(--ion-color-themeLightest) !important;
+  --ion-color-base-rgb: var(--ion-color-themeLightest-rgb) !important;
+  --ion-color-base-contrast: var(--ion-color-themeLightest-contrast) !important;
+  --ion-color-base-contrast-rgb: var(--ion-color-themeLightest-rgb) !important;
+  --ion-color-base-shade: var(--ion-color-themeLightest-shade) !important;
+  --ion-color-base-tint: var(--ion-color-themeLightest-tint) !important;
+}
+
