@@ -6,12 +6,15 @@
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="secondary">
-      <ion-button color="themeLightest">
+      <ion-button color="themeLightest" *ngIf="!isLoggedIn()" (tap)="openLoginDialogue()">
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
+      </ion-button>
+      <ion-button color="themeLightest" *ngIf="isLoggedIn()" (tap)="logOut()">
         <ion-icon slot="icon-only" name="contact"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title color="themeLightest">
-      Home
+      Top Players
     </ion-title>
   </ion-toolbar>
 </ion-header>
