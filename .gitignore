@@ -12,7 +12,8 @@ log.txt
 .vscode/
 npm-debug.log*
 
-token.txt
+src/assets/consumer_key.txt
+src/assets/consumer_secret.txt
 .idea/
 .ionic/
 .sourcemaps/
@@ -33,3 +34,12 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+src/app/core/services/Yahoo-API.service/tokens/consumer_secret.txt
+src/app/core/services/Yahoo-API.service/tokens/consumer_key.txt
+src/app/core/services/Yahoo-API.service/tokens/consumer_secret.txt
+src/app/core/services/Yahoo-API.service/tokens/consumer_key.txt
+src/app/core/services/Yahoo-API.service/tokens/consumer_key.txt
+*.txt
+src/app/core/services/Yahoo-API.service/tokens/consumer_key.txt
+src/app/core/services/Yahoo-API.service/tokens/consumer_secret.txt
+src/app/core/services/Yahoo-API.service/tokens/consumer_key.txt
