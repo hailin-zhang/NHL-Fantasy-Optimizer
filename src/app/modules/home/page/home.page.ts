@@ -10,9 +10,14 @@ import {Standings} from '../../../shared/view-models/standings.view-model';
 })
 export class HomePage {
 
-  private pacificStandings: Array<Standings>
+  public currentStandings: Array<Standings> = [];
 
   constructor(private YahooAPI: YahooService,
-              private NHLApi: NHLService) {}
+              private NHLApi: NHLService) {
+      this.NHLApi.getCurrentStandings().then(standings => {
+        this.currentStandings = standings.records;
+        console.log(this.currentStandings);
+      });
+  }
 
 }

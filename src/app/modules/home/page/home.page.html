@@ -14,12 +14,31 @@
       <!--</ion-button>-->
     <!--</ion-buttons>-->
     <ion-title color="themeLightest">
-      Top Players
+      Current Standings
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
-</ion-content>
+  <!--<ion-virtual-scroll [items]="currentStandings">-->
+    <!--<ion-item *virtualItem="let league">-->
+      <ion-card *ngFor="let league of currentStandings">
+        <ion-list>
+          <ion-item>
+            <h1> Conferences </h1>
+            <ion-item> {{league | conference | conferenceName}} </ion-item>
+            <ion-item> {{league | conference | conferenceID}} </ion-item>
+            <ion-card>
+              <ion-item>
+                <h2> Divisions </h2>
+                <ion-list>
+                  <ion-item> {{league | division | divisionName}} </ion-item>
+                </ion-list>
+              </ion-item>
+            </ion-card>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    <!--</ion-item>-->
+  <!--</ion-virtual-scroll>-->
+</ion-content>>

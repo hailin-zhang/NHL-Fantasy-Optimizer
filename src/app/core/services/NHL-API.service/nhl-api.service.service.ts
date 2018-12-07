@@ -9,7 +9,7 @@ export class NHLService {
   constructor(private http: HttpClient) {
   }
 
-  public getCurrentStandings(): Promise<Object> {
+  public getCurrentStandings(): Promise<any> {
       return this.http.get('https://statsapi.web.nhl.com/api/v1/standings').toPromise();
   }
 }
