@@ -20,25 +20,13 @@
 </ion-header>
 
 <ion-content padding>
-  <!--<ion-virtual-scroll [items]="currentStandings">-->
-    <!--<ion-item *virtualItem="let league">-->
-      <ion-card *ngFor="let league of currentStandings">
-        <ion-list>
-          <ion-item>
-            <h1> Conferences </h1>
-            <ion-item> {{league | conference | conferenceName}} </ion-item>
-            <ion-item> {{league | conference | conferenceID}} </ion-item>
-            <ion-card>
-              <ion-item>
-                <h2> Divisions </h2>
-                <ion-list>
-                  <ion-item> {{league | division | divisionName}} </ion-item>
-                </ion-list>
-              </ion-item>
-            </ion-card>
-          </ion-item>
-        </ion-list>
-      </ion-card>
-    <!--</ion-item>-->
-  <!--</ion-virtual-scroll>-->
+  <ion-title>
+    Conferences
+  </ion-title>
+  <ion-row *ngFor="let league of currentStandings">
+    <ion-card padding>
+      <ion-card-subtitle>{{league | conference | conferenceName}}</ion-card-subtitle>
+      <ion-card-title>{{league | division | divisionName }}</ion-card-title>
+    </ion-card>
+  </ion-row>
 </ion-content>>
