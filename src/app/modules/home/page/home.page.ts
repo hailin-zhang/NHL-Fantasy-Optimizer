@@ -11,6 +11,7 @@ import {Standings} from '../../../shared/view-models/standings.view-model';
 export class HomePage {
 
   public currentStandings: Array<Standings> = [];
+  public nextWeekSchedule: Array<any> = [];
 
   constructor(private YahooAPI: YahooService,
               private NHLApi: NHLService) {
