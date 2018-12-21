@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {YahooService} from '../../../core/services/Yahoo-API.service/yahoo-api.service.service';
 import {NHLService} from '../../../core/services/NHL-API.service/nhl-api.service.service';
-import {Standings} from '../../../shared/view-models/standings.view-model';
+import {Division, League, Standings} from '../../../shared/view-models/standings.view-model';
 
 @Component({
   selector: 'app-home',
@@ -21,4 +21,7 @@ export class HomePage {
       });
   }
 
+  public openDivisionsModal(league: League) {
+    // show divisions
+  }
 }
