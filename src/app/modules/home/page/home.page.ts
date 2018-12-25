@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {YahooService} from '../../../core/services/Yahoo-API.service/yahoo-api.service.service';
 import {NHLService} from '../../../core/services/NHL-API.service/nhl-api.service.service';
 import {Division, League, Standings} from '../../../shared/view-models/standings.view-model';
+import {ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ export class HomePage {
   public nextWeekSchedule: Array<any> = [];
 
   constructor(private YahooAPI: YahooService,
-              private NHLApi: NHLService) {
+              private NHLApi: NHLService,
+              private modalController: ModalController) {
       this.NHLApi.getCurrentStandings().then(standings => {
         this.currentStandings = standings.records;
         console.log(this.currentStandings);
