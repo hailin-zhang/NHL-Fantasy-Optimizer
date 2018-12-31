@@ -1,12 +1,38 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NHLService {
 
+  private _savedPlayers: BehaviorSubject<Set<string>> = new BehaviorSubject(new Set<string>());
+
   constructor(private http: HttpClient) {
+  }
+
+  public savePlayer(playerName: string) {
+    const currentlySaved = this._savedPlayers.value;
+    currentlySaved.add(playerName);
+    // communicate to MongoDB and save player
+      // TODO: determine which field are required for API call for player information - i.e. name, i.d., etc.
+      // if (saved to MongoDB) :
+      this._savedPlayers.next(currentlySaved);
+  }
+
+  public clearSavedPlayers() {
+      // communicate to MongoDB to clear saved players
+      // if (saved to MongoDB):
+    this._savedPlayers.next(new Set<string>());
+  }
+
+  public removeSavedPlayer(playerName: string) {
+      const currentlySaved = this._savedPlayers.value;
+      currentlySaved.delete(playerName);
+      // communicate to MongoDB and delete player
+      // if (saved to MongoDB) :
+      this._savedPlayers.next(currentlySaved);
   }
 
   public async getCurrentStandings(): Promise<any> {
