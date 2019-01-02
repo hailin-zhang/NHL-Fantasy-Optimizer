@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 
 import {HomePage} from './page/home.page';
 import {PipesModule} from '../../shared/pipes/pipes.module';
+import {DivisionTeamsComponent} from './components/division-teams/division-teams.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,7 @@ import {PipesModule} from '../../shared/pipes/pipes.module';
             }
         ])
     ],
-    declarations: [HomePage]
+    declarations: [HomePage, DivisionTeamsComponent]
 })
 export class HomePageModule {
 }

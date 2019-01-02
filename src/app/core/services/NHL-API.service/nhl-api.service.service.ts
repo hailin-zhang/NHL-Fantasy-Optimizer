@@ -12,9 +12,9 @@ export class NHLService {
   constructor(private http: HttpClient) {
   }
 
-  public savePlayer(playerName: string) {
+  public toggleSavePlayer(playerName: string) {
     const currentlySaved = this._savedPlayers.value;
-    currentlySaved.add(playerName);
+    currentlySaved.has(playerName) ? currentlySaved.delete(playerName) : currentlySaved.add(playerName);
     // communicate to MongoDB and save player
       // TODO: determine which field are required for API call for player information - i.e. name, i.d., etc.
       // if (saved to MongoDB) :
@@ -25,14 +25,6 @@ export class NHLService {
       // communicate to MongoDB to clear saved players
       // if (saved to MongoDB):
     this._savedPlayers.next(new Set<string>());
-  }
-
-  public removeSavedPlayer(playerName: string) {
-      const currentlySaved = this._savedPlayers.value;
-      currentlySaved.delete(playerName);
-      // communicate to MongoDB and delete player
-      // if (saved to MongoDB) :
-      this._savedPlayers.next(currentlySaved);
   }
 
   public async getCurrentStandings(): Promise<any> {
