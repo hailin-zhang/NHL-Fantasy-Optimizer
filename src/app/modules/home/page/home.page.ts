@@ -19,13 +19,12 @@ export class HomePage {
     constructor(private YahooAPI: YahooService,
                 private NHLApi: NHLService,
                 private modalController: ModalController) {
-        this.NHLApi.getCurrentStandings().then(standings => {
+        this.NHLApi.getCurrentStandings().then((standings: any) => {
             this.currentStandings = standings.records;
-            console.log(this.currentStandings);
         });
     }
 
-    public openDivisionsModal(league: League) {
+    public openDivisionsModal(division: Division) {
         this.modalController.create({component: DivisionTeamsComponent});
     }
 }
