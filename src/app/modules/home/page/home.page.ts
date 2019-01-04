@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {YahooService} from '../../../core/services/Yahoo-API.service/yahoo-api.service.service';
 import {NHLService} from '../../../core/services/NHL-API.service/nhl-api.service.service';
-import {Division, League, Standings} from '../../../shared/view-models/standings.view-model';
+import {Conference, Division, League, Standings} from '../../../shared/view-models/standings.view-model';
 import {ModalController} from '@ionic/angular';
 import {DivisionTeamsComponent} from '../components/division-teams/division-teams.component';
 
@@ -13,7 +13,7 @@ import {DivisionTeamsComponent} from '../components/division-teams/division-team
 })
 export class HomePage {
 
-    public currentStandings: Array<Standings> = [];
+    public currentStandings: Array<League> = [];
     public nextWeekSchedule: Array<any> = [];
 
     constructor(private YahooAPI: YahooService,

@@ -1,3 +1,30 @@
-<p>
-  division-teams works!
-</p>
+<ion-header>
+  <ion-toolbar color="themeDark">
+    <ion-buttons slot="start">
+      <ion-button color="themeLightest">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!--<ion-buttons slot="secondary">-->
+    <!--<ion-button color="themeLightest" *ngIf="!isLoggedIn()" (tap)="openLoginDialogue()">-->
+    <!--<ion-icon slot="icon-only" name="contact"></ion-icon>-->
+    <!--</ion-button>-->
+    <!--<ion-button color="themeLightest" *ngIf="isLoggedIn()" (tap)="logOut()">-->
+    <!--<ion-icon slot="icon-only" name="contact"></ion-icon>-->
+    <!--</ion-button>-->
+    <!--</ion-buttons>-->
+    <ion-title color="themeLightest">
+      Current Standings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row *ngFor="let league of currentStandings" justify-content-center>
+    <ion-card padding class="divisionCard" (tap)="openDivisionsModal(league.division)">
+      <ion-img src="./../../assets/images/{{league | division | divisionName}}.png"></ion-img>
+      <ion-card-subtitle>{{league | conference | conferenceName}}</ion-card-subtitle>
+      <ion-card-title>{{league | division | divisionName }}</ion-card-title>
+    </ion-card>
+  </ion-row>
+</ion-content>>
