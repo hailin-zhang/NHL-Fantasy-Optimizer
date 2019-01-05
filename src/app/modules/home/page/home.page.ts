@@ -25,6 +25,11 @@ export class HomePage {
     }
 
     public openDivisionsModal(division: Division) {
-        this.modalController.create({component: DivisionTeamsComponent});
+        this.modalController.create({
+            component: DivisionTeamsComponent,
+            componentProps: {
+                'currentDivision': division
+            }
+        });
     }
 }

@@ -20,7 +20,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-row *ngFor="let league of currentLeagues" justify-content-center>
+  <ion-row *ngFor="let league of currentStandings" justify-content-center>
     <ion-card padding class="divisionCard" (tap)="openDivisionsModal(league.division)">
       <ion-img src="./../../assets/images/{{league | division | divisionName}}.png"></ion-img>
       <ion-card-subtitle>{{league | conference | conferenceName}}</ion-card-subtitle>
