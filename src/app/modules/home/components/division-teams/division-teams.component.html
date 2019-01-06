@@ -20,11 +20,14 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-row *ngFor="let team of currentDivision" justify-content-center>
-    <ion-card padding class="divisionCard" (tap)="openDivisionsModal(league.division)">
-      <ion-img src="./../../assets/images/{{league | division | divisionName}}.png"></ion-img>
-      <ion-card-subtitle>{{league | conference | conferenceName}}</ion-card-subtitle>
-      <ion-card-title>{{league | division | divisionName }}</ion-card-title>
-    </ion-card>
+  <ion-row *ngFor="let league of currentDivision" justify-content-center>
+    <ion-nav-push component="app-division-teams" componentProps="league | division">
+      <ion-card padding class="divisionCard">
+        <ion-img src="./../../assets/images/{{league | division | divisionName}}.png"></ion-img>
+        <ion-card-subtitle>{{league | conference | conferenceName}}</ion-card-subtitle>
+        <ion-card-title>{{league | division | divisionName }}</ion-card-title>
+      </ion-card>
+      <ion-button class="next"> click me </ion-button>
+    </ion-nav-push>
   </ion-row>
 </ion-content>>
