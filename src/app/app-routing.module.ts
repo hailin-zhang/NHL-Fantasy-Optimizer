@@ -1,10 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {DivisionTeamsComponent} from './modules/home/components/division-teams/division-teams.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', loadChildren: './modules/home/home.module#HomePageModule'},
-    // {path: 'teams', loadChildren: './modules/home/home.module#DivisionTeamsComponent'},
+    {path: 'teams', component: DivisionTeamsComponent},
 ];
 
 @NgModule({

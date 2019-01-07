@@ -3,6 +3,7 @@ import {YahooService} from '../../../core/services/Yahoo-API.service/yahoo-api.s
 import {NHLService} from '../../../core/services/NHL-API.service/nhl-api.service.service';
 import {Conference, Division, League, Standings} from '../../../shared/view-models/standings.view-model';
 import {DivisionTeamsComponent} from '../components/division-teams/division-teams.component';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -15,10 +16,15 @@ export class HomePage {
     public currentStandings: Array<League> = [];
 
     constructor(private YahooAPI: YahooService,
-                private NHLApi: NHLService,) {
+                private NHLApi: NHLService,
+                private router: Router) {
         this.NHLApi.getCurrentStandings().then((standings: any) => {
             this.currentStandings = standings.records;
         });
+    }
+
+    public openDivisionsComponent(division: Division): void {
+        this.router.navigate(['teams']);
     }
 
 }

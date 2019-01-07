@@ -21,7 +21,7 @@ import {DivisionTeamsComponent} from './components/division-teams/division-teams
             }
         ])
     ],
-    declarations: [HomePage, DivisionTeamsComponent]
+    declarations: [HomePage, DivisionTeamsComponent],
 })
 export class HomePageModule {
 }
