@@ -24,6 +24,7 @@ export class HomePage {
     }
 
     public openDivisionsComponent(division: Division): void {
+        console.log('teams');
         this.router.navigate(['teams']);
     }
 
