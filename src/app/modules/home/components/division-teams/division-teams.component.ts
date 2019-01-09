@@ -8,7 +8,7 @@ import {Division} from '../../../../shared/view-models/standings.view-model';
 })
 export class DivisionTeamsComponent implements OnInit {
 
-    @Input() currentDivision: Division;
+  @Input() public currentDivision: Division;
 
   constructor() { }
 
