@@ -53,4 +53,8 @@ export class NHLService {
   public async getTeamRoster(ID: string): Promise<any> {
     return await this.http.get('GET https://statsapi.web.nhl.com/api/v1/teams/' + ID + '?expand=team.roster').toPromise();
   }
+
+  public async getTeams(): Promise<any> {
+    return await this.http.get(' https://statsapi.web.nhl.com/api/v1/teams').toPromise();
+  }
 }

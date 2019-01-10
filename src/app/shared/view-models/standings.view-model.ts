@@ -41,7 +41,7 @@ export interface Standings {
     wildCardRank: string;
 }
 
-interface Team {
+export interface Team {
     id: number;
     name: string;
     link: string;

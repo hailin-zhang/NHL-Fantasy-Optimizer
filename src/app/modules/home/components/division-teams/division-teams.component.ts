@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Division} from '../../../../shared/view-models/standings.view-model';
+import {Division, Team} from '../../../../shared/view-models/standings.view-model';
+import {NHLService} from '../../../../core/services/NHL-API.service/nhl-api.service.service';
 
 @Component({
   selector: 'app-division-teams',
@@ -9,8 +10,11 @@ import {Division} from '../../../../shared/view-models/standings.view-model';
 export class DivisionTeamsComponent implements OnInit {
 
   @Input() public currentDivision: Division;
+  public teams: Team[];
 
-  constructor() { }
+  constructor(private nhlAPI: NHLService) {
+    this.nhlAPI.getTeams().then((teams: Team[]) => this.teams = teams);
+  }
 
   ngOnInit() {
   }
