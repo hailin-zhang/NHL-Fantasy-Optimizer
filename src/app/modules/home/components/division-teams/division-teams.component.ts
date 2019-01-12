@@ -13,10 +13,14 @@ export class DivisionTeamsComponent implements OnInit {
   public teams: Team[];
 
   constructor(private nhlAPI: NHLService) {
-    this.nhlAPI.getTeams().then((teams: Team[]) => this.teams = teams);
   }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+      this.nhlAPI.getTeams().then((teams: Team[]) =>
+      {
+        this.teams = teams;
+        console.log(this.teams);
+      });
   }
 
 }
