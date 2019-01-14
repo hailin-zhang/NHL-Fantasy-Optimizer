@@ -7,7 +7,7 @@ import {
     GoalsAgainstPipe, LeagueIdentifierIDPipe, LeagueIdentifierNamePipe, LeagueIdentifierPipe,
     LeagueRankPipe,
     LeagueRecordLossesPipe, LeagueRecordOTPipe, LeagueRecordWinsPipe,
-    PointsPipe, StandingsPipe, StreakCodePipe, StreakNumberPipe, StreakTypePipe
+    PointsPipe, StandingsPipe, StreakCodePipe, StreakNumberPipe, StreakTypePipe, TeamDivisionNamePipe, TeamNamePipe
 } from './standings/standings.pipe';
 
 @NgModule({
@@ -34,7 +34,9 @@ import {
         StandingsPipe,
         StreakTypePipe,
         StreakNumberPipe,
-        StreakCodePipe],
+        StreakCodePipe,
+        TeamDivisionNamePipe,
+        TeamNamePipe],
     exports: [
         ConferencePipe,
         ConferenceIDPipe,
@@ -58,7 +60,9 @@ import {
         StandingsPipe,
         StreakTypePipe,
         StreakNumberPipe,
-        StreakCodePipe],
+        StreakCodePipe,
+        TeamDivisionNamePipe,
+        TeamNamePipe],
 })
 export class PipesModule {
 }

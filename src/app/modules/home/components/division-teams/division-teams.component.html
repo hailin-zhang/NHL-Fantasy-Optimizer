@@ -20,12 +20,10 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-row *ngFor="let team of currentDivision" justify-content-center>
-     <ion-card padding class="divisionCard">
-      <ion-img src="./../../assets/images/{{league | division | divisionName}}.png"></ion-img>
-      <ion-card-subtitle>{{league | conference | conferenceName}}</ion-card-subtitle>
-      <ion-card-title>{{league | division | divisionName }}</ion-card-title>
+  <ion-row *ngFor="let team of currentTeams" justify-content-center>
+     <ion-card padding class="divisionCard" *ngIf="(team | teamDivisionName) === (currentDivision | divisionName)" >
+      <ion-img src="./../../assets/images/teams/{{team | teamName}}.png"></ion-img>
+      <ion-card-title>{{ team | teamName  }}</ion-card-title>
     </ion-card>
-    <ion-button class="next"> click me </ion-button>
   </ion-row>
 </ion-content>>

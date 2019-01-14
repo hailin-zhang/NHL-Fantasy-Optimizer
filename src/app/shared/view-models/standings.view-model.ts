@@ -37,11 +37,11 @@ export interface Standings {
     leagueRecord: StandingsRecord;
     points: number;
     streak: Streak;
-    team: Team;
+    team: StandingsTeam;
     wildCardRank: string;
 }
 
-export interface Team {
+export interface StandingsTeam {
     id: number;
     name: string;
     link: string;
@@ -57,4 +57,40 @@ interface Streak {
     streakType: string;
     streakNumber: number;
     streakCode: string;
+}
+
+export interface NHLAPITeam {
+    abbreviation: number;
+    active: boolean;
+    conference: Conference;
+    division: Division;
+    firstYearOfPlay: string;
+    franchise: Franchise;
+    franchiseId: number;
+    link: string;
+    locationName: string;
+    name: string;
+    officialSiteUrl: string;
+    shortName: string;
+    teamName: string;
+    venue: Venue;
+}
+
+interface Franchise {
+    franchiseId: number;
+    teamName: string;
+    link: string;
+}
+
+interface Venue {
+    city: string;
+    link: string;
+    name: string;
+    timeZone: TimeZone;
+}
+
+interface TimeZone {
+    id: string;
+    offset: number;
+    tz: string;
 }

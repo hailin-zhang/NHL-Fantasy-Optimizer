@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Conference, Division, League, LeagueIdentifier, Standings} from '../../view-models/standings.view-model';
+import {Conference, Division, League, LeagueIdentifier, NHLAPITeam, Standings, StandingsTeam} from '../../view-models/standings.view-model';
 
 @Pipe({
     name: 'conference'
@@ -205,5 +205,23 @@ export class StreakNumberPipe implements PipeTransform {
 export class StreakCodePipe implements PipeTransform {
     transform(team: Standings): string {
         return team.streak.streakCode;
+    }
+}
+
+@Pipe({
+    name: 'teamName'
+})
+export class TeamNamePipe implements PipeTransform {
+    transform(team: NHLAPITeam): string {
+        return team.name;
+    }
+}
+
+@Pipe({
+    name: 'teamDivisionName'
+})
+export class TeamDivisionNamePipe implements PipeTransform {
+    transform(team: NHLAPITeam): string {
+        return team.name;
     }
 }

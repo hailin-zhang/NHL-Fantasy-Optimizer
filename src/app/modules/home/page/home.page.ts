@@ -23,9 +23,8 @@ export class HomePage {
         });
     }
 
-    public openDivisionsComponent(division: Division): void {
-        console.log('teams');
-        this.router.navigate(['teams']);
+    public openDivisionsComponent(currentDivision: Division): void {
+        this.router.navigate(['teams', currentDivision]);
     }
 
 }
