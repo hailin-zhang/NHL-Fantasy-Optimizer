@@ -24,7 +24,7 @@ export class HomePage {
     }
 
     public openDivisionsComponent(currentDivision: Division): void {
-        this.router.navigate(['teams', currentDivision]);
+        this.router.navigate(['teams'], {queryParams: currentDivision});
     }
 
 }
