@@ -9,6 +9,7 @@ import {
     LeagueRecordLossesPipe, LeagueRecordOTPipe, LeagueRecordWinsPipe,
     PointsPipe, StandingsPipe, StreakCodePipe, StreakNumberPipe, StreakTypePipe, TeamDivisionNamePipe, TeamNamePipe
 } from './standings/standings.pipe';
+import {HyphenatePipe} from './hyphenate.pipe';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import {
         DivisionNamePipe,
         DivisionNameShortPipe,
         DivisionRankPipe,
+        HyphenatePipe,
         GoalsAgainstPipe,
         LeagueIdentifierIDPipe,
         LeagueIdentifierNamePipe,
@@ -48,6 +50,7 @@ import {
         DivisionNamePipe,
         DivisionNameShortPipe,
         DivisionRankPipe,
+        HyphenatePipe,
         GoalsAgainstPipe,
         LeagueIdentifierIDPipe,
         LeagueIdentifierNamePipe,

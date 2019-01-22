@@ -22,7 +22,6 @@ export class DivisionTeamsComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
       this.subscriptions.push(this.route.queryParams.subscribe((currentDivision: Division) => {
           this.currentDivision = currentDivision;
-          console.log('currentDivision:');
           console.log(this.currentDivision);
       }));
       this.nhlAPI.getTeams().then((teams: any) => {

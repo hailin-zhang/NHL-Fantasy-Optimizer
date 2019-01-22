@@ -21,8 +21,8 @@
 
 <ion-content padding>
   <ion-row *ngFor="let team of currentTeams" justify-content-center>
-     <ion-card padding class="divisionCard" *ngIf="(team | teamDivisionName) === (currentDivision | divisionName)" >
-      <ion-img src="./../../assets/images/teams/{{team | teamName}}.png"></ion-img>
+     <ion-card padding class="divisionCard" *ngIf="(team | division | divisionName) === (currentDivision | divisionName)">
+      <ion-img src="./../../assets/images/teams/{{team | teamName | lowercase | hyphenate}}-logo.png"></ion-img>
       <ion-card-title>{{ team | teamName  }}</ion-card-title>
     </ion-card>
   </ion-row>

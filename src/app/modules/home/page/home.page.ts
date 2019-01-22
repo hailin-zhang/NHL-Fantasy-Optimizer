@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {YahooService} from '../../../core/services/Yahoo-API.service/yahoo-api.service.service';
 import {NHLService} from '../../../core/services/NHL-API.service/nhl-api.service.service';
-import {Conference, Division, League, Standings} from '../../../shared/view-models/standings.view-model';
+import {Division, League} from '../../../shared/view-models/standings.view-model';
 import {DivisionTeamsComponent} from '../components/division-teams/division-teams.component';
 import {Router} from '@angular/router';
 
