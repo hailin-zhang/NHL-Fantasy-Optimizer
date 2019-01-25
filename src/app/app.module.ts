@@ -11,9 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {HttpClientModule} from '@angular/common/http';
 import {HomePageModule} from './modules/home/home.module';
+import { TeamPlayers } from './modules/home/components/team-players/team-players.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TeamPlayers.ComponentComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, HomePageModule],
   providers: [

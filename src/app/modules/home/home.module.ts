@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {HomePage} from './page/home.page';
 import {PipesModule} from '../../shared/pipes/pipes.module';
 import {DivisionTeamsComponent} from './components/division-teams/division-teams.component';
+import {TeamPlayersComponent} from './components/team-players/team-players.component';
 
 @NgModule({
     imports: [
@@ -21,7 +22,7 @@ import {DivisionTeamsComponent} from './components/division-teams/division-teams
             }
         ])
     ],
-    declarations: [HomePage, DivisionTeamsComponent],
+    declarations: [HomePage, DivisionTeamsComponent, TeamPlayersComponent],
 })
 export class HomePageModule {
 }

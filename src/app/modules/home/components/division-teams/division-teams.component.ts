@@ -1,7 +1,7 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Division, NHLAPITeam, StandingsTeam} from '../../../../shared/view-models/standings.view-model';
 import {NHLService} from '../../../../core/services/NHL-API.service/nhl-api.service.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -16,7 +16,8 @@ export class DivisionTeamsComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   constructor(private nhlAPI: NHLService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   public ngOnInit(): void {
@@ -33,5 +34,9 @@ export class DivisionTeamsComponent implements OnInit, OnDestroy {
           subscription.unsubscribe();
       });
   }
+
+public openTeamsComponent(currentTeam: NHLAPITeam): void {
+    this.router.navigate(['currentTeam'], {queryParams: currentTeam});
+}
 
 }
