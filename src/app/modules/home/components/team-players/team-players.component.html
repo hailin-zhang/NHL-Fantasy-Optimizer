@@ -1,3 +1,30 @@
-<p>
-  team-players.component works!
-</p>
+<ion-header>
+  <ion-toolbar color="themeDark">
+    <ion-buttons slot="start">
+      <ion-button color="themeLightest">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!--<ion-buttons slot="secondary">-->
+    <!--<ion-button color="themeLightest" *ngIf="!isLoggedIn()" (tap)="openLoginDialogue()">-->
+    <!--<ion-icon slot="icon-only" name="contact"></ion-icon>-->
+    <!--</ion-button>-->
+    <!--<ion-button color="themeLightest" *ngIf="isLoggedIn()" (tap)="logOut()">-->
+    <!--<ion-icon slot="icon-only" name="contact"></ion-icon>-->
+    <!--</ion-button>-->
+    <!--</ion-buttons>-->
+    <ion-title color="themeLightest">
+      Current Players: {{currentDivision | divisionName}} Division
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row *ngFor="let team of currentTeams" justify-content-center>
+    <ion-card padding class="divisionCard" *ngIf="(team | division | divisionName) === (currentDivision | divisionName)"
+              (tap)="openTeamsComponent(team)">
+      <ion-img src="./../../assets/images/teams/{{team | teamName | lowercase | hyphenate}}-logo.png"></ion-img>
+      <ion-card-title>{{ team | teamName  }}</ion-card-title>
+    </ion-card>
+  </ion-row>
+</ion-content>>
