@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NHLAPITeam} from '../../../../shared/view-models/standings.view-model';
+import {NHLAPITeam, Player} from '../../../../shared/view-models/standings.view-model';
 import {Subscription} from 'rxjs';
 import {NHLService} from '../../../../core/services/NHL-API.service/nhl-api.service.service';
 import {ActivatedRoute} from '@angular/router';
@@ -13,7 +13,7 @@ export class TeamPlayersComponent implements OnInit, OnDestroy {
 
     private subscriptions: Subscription[] = [];
     public currentTeam: NHLAPITeam;
-    public currentRoster;
+    public currentRoster: Player[];
 
     constructor(private nhlAPI: NHLService,
                 private route: ActivatedRoute) {
@@ -24,7 +24,7 @@ export class TeamPlayersComponent implements OnInit, OnDestroy {
             this.currentTeam = currentTeam;
         }));
         // bad practice but I've literally spent 90% of my time making types for everything lmao fml
-        const currentRoster = (await this.nhlAPI.getTeamRoster(this.currentTeam.franchiseId.toString()))[0].roster;
+         this.currentRoster = (await this.nhlAPI.getTeamRoster(this.currentTeam.id.toString())).teams[0].roster.roster;
     }
 
     public ngOnDestroy(): void {

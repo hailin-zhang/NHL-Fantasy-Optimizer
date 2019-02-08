@@ -1,3 +1,23 @@
+// TODO - refactor into player.view-model and league.view-model
+export interface Player {
+    jerseyNumber: string;
+    person: Person;
+    position: PlayerPosition;
+}
+
+interface PlayerPosition {
+    abbreviation: string;
+    code: string;
+    name: string;
+    type: string;
+}
+
+export interface Person {
+    fullName: string;
+    id: number;
+    link: string;
+}
+
 export interface League {
     conference: Conference;
     division: Division;
@@ -67,6 +87,7 @@ export interface NHLAPITeam {
     firstYearOfPlay: string;
     franchise: Franchise;
     franchiseId: number;
+    id: string;
     link: string;
     locationName: string;
     name: string;
