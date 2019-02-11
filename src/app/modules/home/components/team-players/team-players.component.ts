@@ -33,4 +33,7 @@ export class TeamPlayersComponent implements OnInit, OnDestroy {
         });
     }
 
+    public savePlayer(player: Player): void {
+        // call NHLAPIService, save to MongoDB
+    }
 }

@@ -1,33 +1,37 @@
-<!--<ion-header>-->
-  <!--<ion-toolbar color="themeDark">-->
-    <!--<ion-buttons slot="start">-->
-      <!--<ion-button color="themeLightest">-->
-        <!--<ion-icon slot="icon-only" name="menu"></ion-icon>-->
-      <!--</ion-button>-->
+<ion-header>
+  <ion-toolbar color="themeDark">
+    <ion-buttons slot="start">
+      <ion-button color="themeLightest">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!--<ion-buttons slot="secondary">-->
+    <!--<ion-button color="themeLightest" *ngIf="!isLoggedIn()" tappable (click)="openLoginDialogue()">-->
+    <!--<ion-icon slot="icon-only" name="contact"></ion-icon>-->
+    <!--</ion-button>-->
+    <!--<ion-button color="themeLightest" *ngIf="isLoggedIn()" tappable (click)="logOut()">-->
+    <!--<ion-icon slot="icon-only" name="contact"></ion-icon>-->
+    <!--</ion-button>-->
     <!--</ion-buttons>-->
-    <!--&lt;!&ndash;<ion-buttons slot="secondary">&ndash;&gt;-->
-    <!--&lt;!&ndash;<ion-button color="themeLightest" *ngIf="!isLoggedIn()" tappable (click)="openLoginDialogue()">&ndash;&gt;-->
-    <!--&lt;!&ndash;<ion-icon slot="icon-only" name="contact"></ion-icon>&ndash;&gt;-->
-    <!--&lt;!&ndash;</ion-button>&ndash;&gt;-->
-    <!--&lt;!&ndash;<ion-button color="themeLightest" *ngIf="isLoggedIn()" tappable (click)="logOut()">&ndash;&gt;-->
-    <!--&lt;!&ndash;<ion-icon slot="icon-only" name="contact"></ion-icon>&ndash;&gt;-->
-    <!--&lt;!&ndash;</ion-button>&ndash;&gt;-->
-    <!--&lt;!&ndash;</ion-buttons>&ndash;&gt;-->
-    <!--<ion-title color="themeLightest">-->
-      <!--Current Players: {{currentDivision | divisionName}} Division-->
-    <!--</ion-title>-->
-  <!--</ion-toolbar>-->
-<!--</ion-header>-->
+    <ion-title color="themeLightest">
+      Current Players: {{currentTeam | teamName}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<!--<ion-content padding>-->
-  <!--<ion-row *ngFor="let team of currentTeams" justify-content-center>-->
-    <!--<ion-card padding class="divisionCard" *ngIf="(team | division | divisionName) === (currentDivision | divisionName)"-->
-              <!--tappable (click)="openTeamsComponent(team)">-->
-      <!--<ion-img src="./../../assets/images/teams/{{team | teamName | lowercase | hyphenate}}-logo.png"></ion-img>-->
-      <!--<ion-card-title>{{ team | teamName  }}</ion-card-title>-->
-    <!--</ion-card>-->
-  <!--</ion-row>-->
-<!--</ion-content>>-->
-<ion-content>
-  yeet
+<ion-content padding>
+  <ion-row *ngFor="let player of currentRoster" justify-content-center>
+    <ion-card padding class="divisionCard"
+              tappable (click)="savePlayer(player)">
+      <ion-img src="./../../assets/images/teams/{{player | playerName}}.png"></ion-img>
+      <ion-card-title>{{ player | playerName  }}</ion-card-title>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            {{ player | playerPosition}}
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
 </ion-content>

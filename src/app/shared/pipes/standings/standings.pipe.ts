@@ -1,5 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Conference, Division, League, LeagueIdentifier, NHLAPITeam, Standings, StandingsTeam} from '../../view-models/standings.view-model';
+import {
+    Conference,
+    Division,
+    League,
+    LeagueIdentifier,
+    NHLAPITeam,
+    Player,
+    Standings,
+    StandingsTeam
+} from '../../view-models/standings.view-model';
 
 @Pipe({
     name: 'conference'
@@ -225,3 +234,22 @@ export class TeamDivisionNamePipe implements PipeTransform {
         return team.name;
     }
 }
+
+@Pipe({
+    name: 'playerName'
+})
+export class PlayerNamePipe implements PipeTransform {
+    transform(player: Player): string {
+        return player.person.fullName;
+    }
+}
+
+@Pipe({
+    name: 'playerPosition'
+})
+export class PlayerPositionPipe implements PipeTransform {
+    transform(player: Player): string {
+        return player.position.name;
+    }
+}
+
