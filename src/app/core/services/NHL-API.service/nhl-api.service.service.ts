@@ -55,11 +55,7 @@ export class NHLService {
   }
 
   public async getTeams(): Promise<any> {
-    return await this.http.get(' https://statsapi.web.nhl.com/api/v1/teams').toPromise();
-  }
-
-  public async getPlayerImage(playerID: string): Promise<any> {
-    return await this.http.get(' https://nhl.bamcontent.com/images/headshots/current/168x168/' + playerID + '.jpg').toPromise();
+    return await this.http.get('https://statsapi.web.nhl.com/api/v1/teams').toPromise();
   }
 
 }

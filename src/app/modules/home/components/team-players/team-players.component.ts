@@ -15,7 +15,7 @@ export class TeamPlayersComponent implements OnInit, OnDestroy {
     public currentTeam: NHLAPITeam;
     public currentRoster: Player[];
 
-    constructor(private nhlAPI: NHLService,
+    constructor(public nhlAPI: NHLService,
                 private route: ActivatedRoute) {
     }
 
@@ -24,7 +24,7 @@ export class TeamPlayersComponent implements OnInit, OnDestroy {
             this.currentTeam = currentTeam;
         }));
         // bad practice but I've literally spent 90% of my time making types for everything lmao fml
-         this.currentRoster = (await this.nhlAPI.getTeamRoster(this.currentTeam.id.toString())).teams[0].roster.roster;
+        this.currentRoster = (await this.nhlAPI.getTeamRoster(this.currentTeam.id.toString())).teams[0].roster.roster;
     }
 
     public ngOnDestroy(): void {

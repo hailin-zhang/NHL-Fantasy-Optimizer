@@ -23,8 +23,9 @@
   <ion-row *ngFor="let player of currentRoster" justify-content-center>
     <ion-card padding class="divisionCard"
               tappable (click)="savePlayer(player)">
-      <ion-img src="./../../assets/images/teams/{{player | playerName}}.png"></ion-img>
-      <ion-card-title>{{ player | playerName  }}</ion-card-title>
+      <ion-img src="https://nhl.bamcontent.com/images/headshots/current/168x168/{{(player | playerID)}}.jpg">
+      </ion-img>
+      <ion-card-title>{{ player | playerName }}</ion-card-title>
       <ion-card-content>
         <ion-list>
           <ion-item>

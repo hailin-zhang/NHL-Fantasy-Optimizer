@@ -6,7 +6,7 @@ import {
     DivisionRankPipe,
     GoalsAgainstPipe, LeagueIdentifierIDPipe, LeagueIdentifierNamePipe, LeagueIdentifierPipe,
     LeagueRankPipe,
-    LeagueRecordLossesPipe, LeagueRecordOTPipe, LeagueRecordWinsPipe, PlayerNamePipe, PlayerPositionPipe,
+    LeagueRecordLossesPipe, LeagueRecordOTPipe, LeagueRecordWinsPipe, PlayerIDPipe, PlayerNamePipe, PlayerPositionPipe,
     PointsPipe, StandingsPipe, StreakCodePipe, StreakNumberPipe, StreakTypePipe, TeamDivisionNamePipe, TeamNamePipe
 } from './standings/standings.pipe';
 import {HyphenatePipe} from './hyphenate.pipe';
@@ -32,6 +32,7 @@ import {HyphenatePipe} from './hyphenate.pipe';
         LeagueRecordWinsPipe,
         LeagueRecordLossesPipe,
         LeagueRecordOTPipe,
+        PlayerIDPipe,
         PlayerNamePipe,
         PlayerPositionPipe,
         PointsPipe,
@@ -61,6 +62,7 @@ import {HyphenatePipe} from './hyphenate.pipe';
         LeagueRecordWinsPipe,
         LeagueRecordLossesPipe,
         LeagueRecordOTPipe,
+        PlayerIDPipe,
         PlayerNamePipe,
         PlayerPositionPipe,
         PointsPipe,

@@ -253,3 +253,12 @@ export class PlayerPositionPipe implements PipeTransform {
     }
 }
 
+@Pipe({
+    name: 'playerID'
+})
+export class PlayerIDPipe implements PipeTransform {
+    transform(player: Player): number {
+        return player.person.id;
+    }
+}
+
