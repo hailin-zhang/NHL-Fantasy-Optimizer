@@ -1,30 +1,27 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
+import { StitchClientFactory } from 'mongodb-stitch';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NHLService {
+export class NHLService implements OnInit {
 
-  private _savedPlayers: BehaviorSubject<Set<string>> = new BehaviorSubject(new Set<string>());
+  private mongoDB_appID: string = 'nhl-fantasy-optimizer-jhtlz';
+  private stitchClientPromise: any;
+  private stitchClient: any;
 
   constructor(private http: HttpClient) {
+    this.stitchClientPromise = StitchClientFactory.create(this.mongoDB_appID);
+  }
+
+  public async ngOnInit(): Promise<void> {
+      this.stitchClient = await this.stitchClientPromise;
   }
 
   public toggleSavePlayer(playerName: string) {
-    const currentlySaved = this._savedPlayers.value;
-    currentlySaved.has(playerName) ? currentlySaved.delete(playerName) : currentlySaved.add(playerName);
-    // communicate to MongoDB and save player
-      // TODO: determine which field are required for API call for player information - i.e. name, i.d., etc.
-      // if (saved to MongoDB) :
-      this._savedPlayers.next(currentlySaved);
-  }
-
-  public clearSavedPlayers() {
-      // communicate to MongoDB to clear saved players
-      // if (saved to MongoDB):
-    this._savedPlayers.next(new Set<string>());
+    const database = this.stitchClient.service('mongodb', 'mongodb-atlas').db('')
   }
 
   public async getCurrentStandings(): Promise<any> {
