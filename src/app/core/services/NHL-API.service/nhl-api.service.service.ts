@@ -1,6 +1,5 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject} from 'rxjs';
 import { StitchClientFactory } from 'mongodb-stitch';
 
 @Injectable({
