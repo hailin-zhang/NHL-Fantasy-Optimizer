@@ -1,9 +1,9 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {Division, NHLAPITeam, StandingsTeam} from '../../../../shared/view-models/standings.view-model';
-import {NHLService} from '../../../../core/services/NHL-API.service/nhl-api.service.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Division, NHLAPITeam} from '@VM/standings.view-model';
+import {NHLService} from '@services/NHL-API.service/nhl-api.service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
-import {TeamPlayersComponent} from '../team-players/team-players.component';
+import {TeamPlayersComponent} from '@home-components/team-players/team-players.component';
 
 @Component({
     selector: 'app-division-teams',

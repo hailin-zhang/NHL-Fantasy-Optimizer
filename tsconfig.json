@@ -16,6 +16,11 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@home-components/*": ["src/app/modules/home/components/*"],
+      "@services/*": ["src/app/core/services/*"],
+      "@VM/*": ["src/app/shared/view-models/*"]
+    }
   }
 }
