@@ -6,8 +6,8 @@ import {RouterModule} from '@angular/router';
 
 import {HomePage} from './page/home.page';
 import {PipesModule} from '../../shared/pipes/pipes.module';
-import {DivisionTeamsComponent} from './components/division-teams/division-teams.component';
-import {TeamPlayersComponent} from './components/team-players/team-players.component';
+import {DivisionTeamsComponent} from '@home-components/division-teams/division-teams.component';
+import {TeamPlayersComponent} from '@home-components/team-players/team-players.component';
 
 @NgModule({
     imports: [
