@@ -19,11 +19,11 @@ export class NHLService implements OnInit {
       this.stitchClient = await this.stitchClientPromise;
   }
 
-  public toggleSavePlayer(playerName: string) {
+  public toggleSavePlayer(playerName: string, playerID: string) {
     const savedPlayers = this.stitchClient.service('mongodb', 'mongodb-atlas').db('store').collection('players');
     const player = {
       playerName: playerName,
-      playerId: 'todo',
+      playerId: playerID,
     };
     savedPlayers.insertOne(player);
   }
