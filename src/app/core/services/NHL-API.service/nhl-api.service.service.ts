@@ -1,15 +1,23 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { StitchClientFactory } from 'mongodb-stitch';
+import {Observable, ReplaySubject} from 'rxjs';
+import {first} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
+
+export interface DatabasePlayer {
+  name: string;
+  id: string;
+}
 export class NHLService implements OnInit {
 
   private mongoDB_appID: string = 'nhl-fantasy-optimizer-jhtlz';
   private stitchClientPromise: any;
   private stitchClient: any;
+  private _savedPlayers: ReplaySubject<Map<string, DatabasePlayer>> = new ReplaySubject(1);
 
   constructor(private http: HttpClient) {
     this.stitchClientPromise = StitchClientFactory.create(this.mongoDB_appID);
@@ -19,13 +27,27 @@ export class NHLService implements OnInit {
       this.stitchClient = await this.stitchClientPromise;
   }
 
-  public toggleSavePlayer(playerName: string, playerID: string) {
+  public get savedPlayers(): Observable<Map<string, DatabasePlayer>> {
+    return this._savedPlayers;
+  }
+
+  public refreshPlayers() {
     const savedPlayers = this.stitchClient.service('mongodb', 'mongodb-atlas').db('store').collection('players');
-    const player = {
-      playerName: playerName,
-      playerId: playerID,
-    };
-    savedPlayers.insertOne(player);
+    this._savedPlayers.next(savedPlayers); // replace with mongodb saved players list
+  }
+
+  public async toggleSavePlayer(playerName: string, playerID: string): Promise<void> {
+    const currentlySavedPlayers = await this._savedPlayers.pipe(first()).toPromise();
+    if (!currentlySavedPlayers.has(playerName)) {
+        const savedPlayers = this.stitchClient.service('mongodb', 'mongodb-atlas').db('store').collection('players');
+        const player = {
+            playerName: playerName,
+            playerId: playerID,
+        };
+        savedPlayers.insertOne(player);
+    } else {
+      // remove from database
+    }
   }
 
   public async getCurrentStandings(): Promise<any> {
