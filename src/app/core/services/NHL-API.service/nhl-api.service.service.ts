@@ -14,7 +14,7 @@ export interface DatabasePlayer {
 }
 export class NHLService implements OnInit {
 
-  private mongoDB_appID: string = 'nhl-fantasy-optimizer-jhtlz';
+  private mongoDB_appID: string = 'nhl-fantasy-optimizer';
   private stitchClientPromise: any;
   private stitchClient: any;
   private _savedPlayers: ReplaySubject<Map<string, DatabasePlayer>> = new ReplaySubject(1);
