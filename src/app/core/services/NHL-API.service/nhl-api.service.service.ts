@@ -34,6 +34,7 @@ export class NHLService implements OnInit {
   public refreshPlayers() {
     const savedPlayers = this.stitchClient.service('mongodb', 'mongodb-atlas').db('store').collection('players');
     this._savedPlayers.next(savedPlayers); // replace with mongodb saved players list
+      // TODO: add, remove extra
   }
 
   public async toggleSavePlayer(playerName: string, playerID: string): Promise<void> {
