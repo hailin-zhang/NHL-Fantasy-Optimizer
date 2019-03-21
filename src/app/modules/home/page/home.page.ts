@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {YahooService} from '@services/Yahoo-API.service/yahoo-api.service.service';
 import {NHLService} from '@services/NHL-API.service/nhl-api.service.service';
 import {Division, League} from '@VM/standings.view-model';
@@ -11,16 +11,17 @@ import {Router} from '@angular/router';
     styleUrls: ['home.page.scss'],
     entryComponents: [DivisionTeamsComponent]
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
     public currentStandings: Array<League> = [];
 
     constructor(private YahooAPI: YahooService,
                 private NHLApi: NHLService,
                 private router: Router) {
-        this.NHLApi.getCurrentStandings().then((standings: any) => {
-            this.currentStandings = standings.records;
-        });
+    }
+
+    public async ngOnInit(): Promise<void> {
+        this.currentStandings = (await this.NHLApi.getCurrentStandings()).records;
     }
 
     public openDivisionsComponent(currentDivision: Division): void {

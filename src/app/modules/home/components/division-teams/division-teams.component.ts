@@ -4,6 +4,7 @@ import {NHLService} from '@services/NHL-API.service/nhl-api.service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {TeamPlayersComponent} from '@home-components/team-players/team-players.component';
+import {first} from 'rxjs/operators';
 
 @Component({
     selector: 'app-division-teams',
@@ -11,32 +12,21 @@ import {TeamPlayersComponent} from '@home-components/team-players/team-players.c
     styleUrls: ['./division-teams.component.scss'],
     entryComponents: [TeamPlayersComponent]
 })
-export class DivisionTeamsComponent implements OnInit, OnDestroy {
+export class DivisionTeamsComponent implements OnInit {
 
     public currentDivision: Division;
     public currentTeams: NHLAPITeam[];
-    private subscriptions: Subscription[] = [];
 
     constructor(private nhlAPI: NHLService,
                 private route: ActivatedRoute,
                 private router: Router) {
     }
 
-    public ngOnInit(): void {
-        this.subscriptions.push(this.route.queryParams.subscribe((currentDivision: Division) => {
-            this.currentDivision = currentDivision;
-        }));
-        this.nhlAPI.getTeams().then((teams: any) => {
-            this.currentTeams = teams.teams;
-        });
+    public async ngOnInit(): Promise<void> {
+        this.currentDivision = await (this.route.queryParams.pipe(first()).toPromise()) as Division;
+        this.currentTeams = await (this.nhlAPI.getTeams().pipe(first()).toPromise()).teams;
     }
-
-    public ngOnDestroy(): void {
-        this.subscriptions.forEach(subscription => {
-            subscription.unsubscribe();
-        });
-    }
-
+    
     public openTeamsComponent(currentTeam: NHLAPITeam): void {
         this.router.navigate(['players'], {queryParams: currentTeam});
     }
