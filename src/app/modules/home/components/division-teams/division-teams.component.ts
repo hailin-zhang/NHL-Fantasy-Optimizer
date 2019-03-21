@@ -24,9 +24,9 @@ export class DivisionTeamsComponent implements OnInit {
 
     public async ngOnInit(): Promise<void> {
         this.currentDivision = await (this.route.queryParams.pipe(first()).toPromise()) as Division;
-        this.currentTeams = await (this.nhlAPI.getTeams().pipe(first()).toPromise()).teams;
+        this.currentTeams = (await this.nhlAPI.getTeams()).teams;
     }
-    
+
     public openTeamsComponent(currentTeam: NHLAPITeam): void {
         this.router.navigate(['players'], {queryParams: currentTeam});
     }
