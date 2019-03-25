@@ -20,11 +20,15 @@ export class TeamPlayersComponent implements OnInit {
 
     public async ngOnInit(): Promise<void> {
         this.currentTeam = await (this.route.queryParams.pipe(first()).toPromise()) as NHLAPITeam;
-        // bad practice but I've literally spent 90% of my time making types for everything lmao fml
+        // TODO: consider typing this
         this.currentRoster = (await this.nhlAPI.getTeamRoster(this.currentTeam.id.toString())).teams[0].roster.roster;
     }
 
     public savePlayer(player: Player): void {
         // call NHLAPIService, save to MongoDB
+    }
+
+    public async refreshDatabase(): Promise<void> {
+        // refresh from service
     }
 }
