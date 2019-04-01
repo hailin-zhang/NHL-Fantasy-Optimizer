@@ -7,8 +7,7 @@ import {
     NHLAPITeam,
     Player,
     Standings,
-    StandingsTeam
-} from '../../view-models/standings.view-model';
+} from '@VM/standings.view-model';
 
 @Pipe({
     name: 'conference'
