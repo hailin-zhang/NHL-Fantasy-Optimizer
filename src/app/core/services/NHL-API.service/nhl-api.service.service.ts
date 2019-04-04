@@ -1,6 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { StitchClientFactory } from 'mongodb-stitch';
+import {StitchClientFactory} from 'mongodb-stitch';
 import {Observable, ReplaySubject} from 'rxjs';
 import {first} from 'rxjs/operators';
 
