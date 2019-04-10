@@ -1,13 +1,33 @@
 import {NgModule} from '@angular/core';
 import {
-    ConferenceIDPipe, ConferenceNamePipe,
+    ConferenceIDPipe,
+    ConferenceNamePipe,
     ConferencePipe,
-    ConferenceRankPipe, DivisionAbbreviationPipe, DivisionIDPipe, DivisionNamePipe, DivisionNameShortPipe, DivisionPipe,
+    ConferenceRankPipe,
+    DivisionAbbreviationPipe,
+    DivisionIDPipe,
+    DivisionNamePipe,
+    DivisionNameShortPipe,
+    DivisionPipe,
     DivisionRankPipe,
-    GoalsAgainstPipe, LeagueIdentifierIDPipe, LeagueIdentifierNamePipe, LeagueIdentifierPipe,
+    GoalsAgainstPipe,
+    LeagueIdentifierIDPipe,
+    LeagueIdentifierNamePipe,
+    LeagueIdentifierPipe,
     LeagueRankPipe,
-    LeagueRecordLossesPipe, LeagueRecordOTPipe, LeagueRecordWinsPipe, PlayerIDPipe, PlayerNamePipe, PlayerPositionPipe,
-    PointsPipe, StandingsPipe, StreakCodePipe, StreakNumberPipe, StreakTypePipe, TeamDivisionNamePipe, TeamNamePipe
+    LeagueRecordLossesPipe,
+    LeagueRecordOTPipe,
+    LeagueRecordWinsPipe,
+    PlayerIDPipe,
+    PlayerNamePipe,
+    PlayerPositionPipe,
+    PointsPipe,
+    StandingsPipe,
+    StreakCodePipe,
+    StreakNumberPipe,
+    StreakTypePipe,
+    TeamDivisionNamePipe,
+    TeamNamePipe
 } from './standings/standings.pipe';
 import {HyphenatePipe} from './hyphenate.pipe';
 
