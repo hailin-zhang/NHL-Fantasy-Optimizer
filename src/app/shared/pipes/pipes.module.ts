@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+// TODO - all these pipes are overkill. pipes only for transforming data.
 import {
     ConferenceIDPipe,
     ConferenceNamePipe,
