@@ -9,6 +9,7 @@ import {PipesModule} from '../../shared/pipes/pipes.module';
 import {DivisionTeamsComponent} from '@home-components/division-teams/division-teams.component';
 import {TeamPlayersComponent} from '@home-components/team-players/team-players.component';
 
+// TODO - separate modules 
 @NgModule({
     imports: [
         CommonModule,
