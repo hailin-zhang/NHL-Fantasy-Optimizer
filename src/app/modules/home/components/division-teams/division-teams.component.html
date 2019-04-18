@@ -1,13 +1,16 @@
 <ion-header>
   <ion-toolbar color="themeDark">
     <ion-buttons slot="start">
-      <ion-button color="themeLightest">
-        <ion-icon slot="icon-only" name="menu"></ion-icon>
-      </ion-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title color="themeLightest">
       Current Teams: {{currentDivision | divisionName}} Division
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="themeLightest">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
