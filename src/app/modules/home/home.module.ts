@@ -23,7 +23,11 @@ import {TeamPlayersComponent} from '@home-components/team-players/team-players.c
             }
         ])
     ],
-    declarations: [HomePage, DivisionTeamsComponent, TeamPlayersComponent],
+    declarations: [
+        HomePage,
+        DivisionTeamsComponent, 
+        TeamPlayersComponent
+    ],
 })
 export class HomePageModule {
 }
