@@ -25,7 +25,7 @@ import {TeamPlayersComponent} from '@home-components/team-players/team-players.c
     ],
     declarations: [
         HomePage,
-        DivisionTeamsComponent, 
+        DivisionTeamsComponent,
         TeamPlayersComponent
     ],
 })

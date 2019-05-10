@@ -4,14 +4,15 @@ import {StitchClientFactory} from 'mongodb-stitch';
 import {Observable, ReplaySubject} from 'rxjs';
 import {first} from 'rxjs/operators';
 
+export interface DatabasePlayer {
+    name: string;
+    id: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 
-export interface DatabasePlayer {
-  name: string;
-  id: string;
-}
 export class NHLService implements OnInit {
 
   private mongoDB_appID: string = 'nhl-fantasy-optimizer';
